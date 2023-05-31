@@ -2,7 +2,7 @@ import Pat from "./images/Patna.jpg";
 import Mul from "./images/Mullayanagiri.jpg";
 import Ris from "./images/Rishikesh.jpg";
 import Mus from "./images/Mussoorie.jpg";
-export default [
+const data = [
   {
     id: 1,
     photo: Pat,
@@ -53,3 +53,4 @@ export default [
       "The hill station is in the foothills of the Garhwal Himalayan range.",
   },
 ];
+export default data;
