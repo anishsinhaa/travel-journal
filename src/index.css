@@ -4,70 +4,100 @@ body {
   background-color: #f5f7fb;
 }
 
-a:link {
+a:link,
+a:visited {
   color: green;
   background-color: transparent;
   text-decoration: none;
 }
 
-a:visited {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
+a:hover,
+a:active {
   color: red;
   background-color: transparent;
   text-decoration: underline;
 }
 
-a:active {
-  color: black;
-  background-color: transparent;
-  text-decoration: underline;
+.header > button {
+  font-size: 12px;
+  position: absolute;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 50%;
+  size: 2px;
+  vertical-align: middle;
 }
 
-.header {
+.header > button:hover {
+  cursor: pointer;
+}
+
+.toggler-light {
+  background-color: black;
+  color: white;
+}
+
+.toggler-dark {
+  background-color: white;
+  color: black;
+}
+
+.header-main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f55a5a;
+  padding: 10px;
+  margin-bottom: 20px;
 }
+
+.header-main > img {
+  margin-right: 10px;
+  max-width: 100px;
+}
+
 .footer {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #918e9b;
+  padding: 10px;
 }
-.header img {
-  margin-right: 10px; /* Optional margin between the icon and the title */
-}
+
 .main-container {
-  padding: 40px;
-  display: flexbox;
-  justify-content: center;
-  padding-left: 400px;
-}
-.googlemaps {
-  font-size: 12px;
-  size: 10px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.googlemaps {
+  font-size: 14px;
+  padding: 10px;
   text-decoration: underline;
 }
+
 .photo {
-  width: 400px;
-  margin-right: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   border-radius: 6px;
   box-shadow: 0px 0px 10px 0px grey;
 }
 
 .card {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 800px;
-  height: 500px;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px grey;
 }
 
 .card > h4,
@@ -77,14 +107,17 @@ a:active {
   margin: 0;
   padding: 0;
 }
+
 .info {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: flex-start;
   margin: 0;
   padding: 0;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
 }
 
 .state {
@@ -96,3 +129,28 @@ a:active {
 .state img {
   margin-right: 10px;
 }
+.toggle-icon{
+  font-size:25px
+}
+
+@media only screen and (max-width: 600px) {
+  .header-h1{
+    font-size: 20px;
+  }
+  .header > button {
+    margin-top: 15px;
+  }
+  .toggle-icon{
+    font-size:15px
+  }
+  .card {
+    max-width: 330px;
+  }
+  .card > h4,
+  .card > h2,
+  .card > h6,
+  .card > p {
+  margin: 0;
+  padding: 0;
+}
+} 

@@ -2,7 +2,7 @@ import loc from "../images/location-pin.png";
 export default function Main(props) {
   return (
     <main className="main-container">
-      <card className="card">
+      <div className="card">
         <img className="photo" src={props.photo} alt="Location"></img>
         <section className="info">
           <div className="state">
@@ -18,7 +18,7 @@ export default function Main(props) {
           </h6>
           <p>{props.des}</p>
         </section>
-      </card>
+      </div>
     </main>
   );
 }
