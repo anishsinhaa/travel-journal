@@ -138,13 +138,14 @@ a:active {
     font-size: 20px;
   }
   .header > button {
-    margin-top: 15px;
+    margin-left: 20px;
+    margin-top: 20px;
   }
   .toggle-icon{
     font-size:15px
   }
   .card {
-    max-width: 330px;
+    max-width: 450px;
   }
   .card > h4,
   .card > h2,
