@@ -1,0 +1,12 @@
+.Images{
+    display: flex;
+}
+
+.photos{
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px 0px grey;
+}

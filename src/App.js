@@ -3,23 +3,38 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import data from "./data";
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { MorePhotos} from "./components/MorePhotos";
 
-const place_list = data.map((data) => {
-  return <Main key={data.id} {...data} />;
-});
-
-
+const PlaceList = () => {
+  return data.map((data) => {
+    return <Main key={data.id} {...data} />;
+  });
+};
 
 function App() {
-  const [darkMode,setDarkMode]=React.useState(false)
-  console.log(darkMode)
-  const toggle=()=>{
-    setDarkMode((prevState)=>!prevState)
-  }
+  const [darkMode, setDarkMode] = React.useState(false);
+  const toggle = () => {
+    setDarkMode((prevState) => !prevState);
+  };
   return (
-    <div className="App" style={{backgroundColor: darkMode?"#28282B":"whitesmoke", color: darkMode?"white":"#28282B"}}>
+    <div
+      className="App"
+      style={{
+        backgroundColor: darkMode ? "#28282B" : "whitesmoke",
+        color: darkMode ? "white" : "#28282B",
+      }}
+    >
       <Header darkMode={darkMode} toggle={toggle} />
-      <section className="place-list">{place_list}</section>
+      <Router>
+        <Routes>
+          <Route path="/" element={<PlaceList />} />
+          <Route path="/location/:id" element={<MorePhotos />} />
+        </Routes>
+
+        {/* <section className="place-list"></section> */}
+      </Router>
+
       <Footer />
     </div>
   );
