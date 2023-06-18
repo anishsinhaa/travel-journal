@@ -18,6 +18,10 @@ a:active {
   text-decoration: underline;
 }
 
+.header{
+  width: 100%;
+}
+
 .header > button {
   font-size: 12px;
   position: absolute;

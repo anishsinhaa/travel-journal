@@ -1,12 +1,47 @@
-.Images{
+.Images {
     display: flex;
-}
-
-.photos{
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none; /* Hides the scrollbar in IE and Edge */
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
+  }
+  
+  .Images::-webkit-scrollbar {
+    width: 5px; /* Set the width of the scrollbar */
+    opacity: 0.5; /* Reduce the opacity of the scrollbar */
+  }
+  
+  .Images::-webkit-scrollbar-thumb {
+    background-color: #000000; /* Set the color of the scrollbar thumb */
+    border-radius: 2.5px; /* Set the border radius of the scrollbar thumb */
+  }
+  
+  .Images::-webkit-scrollbar-thumb:hover {
+    opacity: 0.8; /* Increase the opacity of the scrollbar thumb on hover */
+  }
+  
+  body {
+    overflow: hidden; /* Prevent scrolling of the whole page */
+  }
+  
+  .photos {
     width: 100%;
     max-width: 400px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 20px;
     border-radius: 6px;
     box-shadow: 0px 0px 10px 0px grey;
-}
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .Images {
+      overflow-x: scroll;
+      scroll-snap-type: none; /* Disable scroll snap for mobile view */
+      scrollbar-width: none; /* Hide the scrollbar in Firefox */
+      -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    }
+  
+    .photos {
+      flex-shrink: 0; /* Prevent the photos from shrinking in mobile view */
+    }
+  }
+  

@@ -1,12 +1,19 @@
-import Pat from "./images/Bihar-Jharkhand/Pat1.jpg";
-import Pat2 from "./images/Bihar-Jharkhand/Pat2.jpg";
+import JB1 from "./images/Bihar-Jharkhand/1.jpg";
+import JB2 from "./images/Bihar-Jharkhand/2.jpg";
+import JB3 from "./images/Bihar-Jharkhand/3.jpg";
+import JB4 from "./images/Bihar-Jharkhand/4.jpg";
+import JB5 from "./images/Bihar-Jharkhand/5.jpg";
+import JB6 from "./images/Bihar-Jharkhand/6.jpg";
+import JB7 from "./images/Bihar-Jharkhand/7.jpg";
+import JB8 from "./images/Bihar-Jharkhand/8.jpg";
+
 import Mul from "./images/Mullayanagiri.jpg";
 import Ris from "./images/Rishikesh.jpg";
 import Mus from "./images/Mussoorie.jpg";
 const data = [
   {
     id: 1,
-    photo:Pat,
+    photo: JB1,
     location: "Bihar-Jharkhand",
     state: "BIHAR",
     date: "JULY 30, 2021",
@@ -16,7 +23,7 @@ const data = [
       "The state capital, it’s home to Bihar Museum, a contemporary landmark exhibiting bronze sculptures and old coins from the region." +
       "Nearby, Indo-Saracenic–style Patna Museum displays a casket believed to contain the Buddha’s ashes." +
       "Close to the river, the Golghar is a domed colonial granary overlooking the city.",
-      allphotos:[Pat,Pat2]
+    allphotos: [JB1, JB2,JB3,JB4,JB5,JB6,JB7,JB8],
   },
   {
     id: 2,
@@ -29,6 +36,7 @@ const data = [
       "Mullayyanagiri is the highest peak in Karnataka, India." +
       "Mullayyanagiri is located in the Chandra Dhrona Hill Ranges of the Western Ghats of Chikkamagaluru Taluk." +
       "With a height of 1,925 metres, it is the highest peak in Karnataka and also the 23rd highest peak in Western Ghats.",
+    allphotos: [Mul],
   },
   {
     id: 3,
@@ -41,6 +49,7 @@ const data = [
       "Rishikesh is a city in India’s northern state of Uttarakhand, in the Himalayan foothills beside the Ganges River." +
       "The river is considered holy, and the city is renowned as a center for studying yoga and meditation." +
       "Temples and ashrams line the eastern bank around Swarg Ashram, a traffic-free, alcohol-free and vegetarian enclave upstream from Rishikesh town.",
+    allphotos: [Ris],
   },
   {
     id: 4,
@@ -53,6 +62,7 @@ const data = [
       "Mussoorie is a hill station and a municipal board, near Dehradun city in the Dehradun district of the Indian state Uttarakhand." +
       "It is about 35 kilometres from the state capital of Dehradun and 290 km north of the national capital of New Delhi." +
       "The hill station is in the foothills of the Garhwal Himalayan range.",
+    allphotos: [Mus],
   },
 ];
 export default data;
