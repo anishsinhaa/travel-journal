@@ -11,7 +11,7 @@ export const MorePhotos = () => {
   const photolist= photos?.map((photo,index)=>{return <img key={index} className="photos" src={photo} alt="Location"></img> })
   console.log(photos)
   return (
-    <div>
+    <div className="morephotos-container">
       <h2>More Photos in {loc.location}</h2>
       <div className="Images">
        {photolist}

@@ -20,8 +20,9 @@
     opacity: 0.8; /* Increase the opacity of the scrollbar thumb on hover */
   }
   
-  body {
-    overflow: hidden; /* Prevent scrolling of the whole page */
+  .morephotos-container {
+    overflow-y: hidden; /* Prevent scrolling of the whole page */
+    margin-bottom: 20px;
   }
   
   .photos {
