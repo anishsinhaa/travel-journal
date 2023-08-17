@@ -9,10 +9,11 @@ export default function Header(props) {
       props.darkMode ? (
         <Icon className="toggle-icon" icon="iconamoon:mode-light" />
       ) : (
-        <Icon className="toggle-icon"  icon="material-symbols:dark-mode" />
+        <Icon className="toggle-icon" icon="material-symbols:dark-mode" />
       )
     );
   }, [props.darkMode]);
+
   return (
     <header
       className="header"
@@ -28,8 +29,10 @@ export default function Header(props) {
         {buttonText}
       </button>
       <div className="header-main">
-        <img src={icon} alt="Globe"></img>
-        <h1 className="header-h1">My Travel Journal .</h1>
+        <a href="/" className="header-title-link">
+          <img className="globe" src={icon} alt="Globe"></img>
+          <h1 className="header-h1">My Travel Journal .</h1>
+        </a>
       </div>
     </header>
   );

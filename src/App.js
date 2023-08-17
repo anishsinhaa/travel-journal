@@ -41,7 +41,7 @@ function App() {
         color: darkMode ? "white" : "#28282B",
       }}
     >
-      <Header darkMode={darkMode} toggle={toggle} />
+      <Header darkMode={darkMode} toggle={toggle}  />
       <div className="main-cont">
       <Router>
         <Routes>

@@ -27,6 +27,7 @@ a:active {
 }
 
 .header > button {
+  top: 8px;
   font-size: 12px;
   position: absolute;
   padding: 10px;
@@ -41,13 +42,18 @@ a:active {
 .header > button:hover {
   cursor: pointer;
 }
+.globe{
+  cursor: pointer;
+}
 
 .toggler-light {
+  transition: color 1.3s ease;
   background-color: black;
   color: white;
 }
 
 .toggler-dark {
+  transition: color 1.3s ease;
   background-color: white;
   color: black;
 }
@@ -60,14 +66,30 @@ a:active {
   margin-bottom: 20px;
 }
 
-.header-main > img {
-  margin-right: 10px;
-  max-width: 100px;
+.header-main > a {
+  color: inherit;
+  
 }
 .header-h1 {
   font-family: "Tilt Prism";
   text-decoration: underline;
   text-underline-offset: 12px;
+  cursor: pointer;
+}
+.header-title-link{
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  transition: color 1.3s ease;
+}
+.header-title-link:hover{
+  text-decoration: none;
+}
+.header-title-link > img{
+  position: relative;
+  margin-right: 10px;
+  top: 30px;
+  height: 30px;
 }
 
 .footer {
@@ -88,7 +110,6 @@ a:active {
   align-items: center;
 }
 .main-cont {
-  background-color: #f5f5f5;
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -125,10 +146,11 @@ a:active {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 6px;
-  box-shadow: 0px 0px 10px 0px grey;
+  box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.329);
 }
 .card:hover {
   transform: scale(1.05);
+  transition: all 0.21s ease;
   cursor: pointer;
 }
 
@@ -195,7 +217,7 @@ a:active {
   .card {
     width: 100%;
     max-width: 100%;
-    box-shadow: 0px 0px 8px 0px grey;
+    box-shadow: 0px 0px 8px 0px rgb(128, 128, 128);
     padding: 15px;
     margin-bottom: 15px;
   }
