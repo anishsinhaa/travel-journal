@@ -1,7 +1,11 @@
 body {
   margin: 0;
   font-family: Montserrat;
-  background-color: #f5f7fb;
+  background-color: #f5f5f5;
+  width: 100%;
+}
+.app {
+  overflow: hidden;
 }
 
 a:link,
@@ -18,7 +22,7 @@ a:active {
   text-decoration: underline;
 }
 
-.header{
+.header {
   width: 100%;
 }
 
@@ -60,6 +64,11 @@ a:active {
   margin-right: 10px;
   max-width: 100px;
 }
+.header-h1 {
+  font-family: "Tilt Prism";
+  text-decoration: underline;
+  text-underline-offset: 12px;
+}
 
 .footer {
   display: flex;
@@ -67,41 +76,60 @@ a:active {
   justify-content: center;
   background-color: #918e9b;
   padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
-.main-container {
-  padding: 20px;
+.main-card {
+  padding: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.main-cont {
+  background-color: #f5f5f5;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 
 .googlemaps {
   font-size: 14px;
   padding: 10px;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .photo {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
+  height: 400px;
   margin-bottom: 20px;
   margin-top: 20px;
   border-radius: 6px;
   box-shadow: 0px 0px 10px 0px grey;
 }
+/* .photo:hover{
+  transform: scale(1.1);
+} */
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
+  width: 400px;
+  /* max-width: 500px; */
+  height: 100%;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 6px;
   box-shadow: 0px 0px 10px 0px grey;
+}
+.card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .card > h4,
@@ -126,6 +154,7 @@ a:active {
 
 .state {
   display: flex;
+  padding: 0;
   align-items: center;
   font-family: IBM Plex Mono;
 }
@@ -133,29 +162,63 @@ a:active {
 .state img {
   margin-right: 10px;
 }
-.toggle-icon{
-  font-size:25px
+.toggle-icon {
+  font-size: 25px;
 }
 
-@media only screen and (max-width: 600px) {
-  .header-h1{
+@media only screen and (max-width: 800px) {
+  /* Simplify the font size for smaller screens */
+  body {
+    font-size: 14px;
+  }
+
+  /* Center align the header content */
+  .header-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Increase the font size for the header on mobile */
+  .header-h1 {
+    font-size: 24px;
+    text-underline-offset: 8px;
+  }
+
+  /* Adjust the margin of the header button on mobile */
+  .header > button {
+    margin: 10px;
+    margin-top: 10px;
+  }
+
+  /* Adjust card styles for mobile */
+  .card {
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0px 0px 8px 0px grey;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  /* Adjust the footer for mobile */
+  .footer {
+    padding: 8px;
+  }
+
+  /* Adjust the grid layout for mobile */
+  .main-cont {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Adjust the Google Maps link size on mobile */
+  .googlemaps {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  /* Adjust the size of the header button icon */
+  .toggle-icon {
     font-size: 20px;
   }
-  .header > button {
-    margin-left: 20px;
-    margin-top: 20px;
-  }
-  .toggle-icon{
-    font-size:15px
-  }
-  .card {
-    max-width: 450px;
-  }
-  .card > h4,
-  .card > h2,
-  .card > h6,
-  .card > p {
-  margin: 0;
-  padding: 0;
 }
-} 

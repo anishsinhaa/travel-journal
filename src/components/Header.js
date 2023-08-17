@@ -29,7 +29,7 @@ export default function Header(props) {
       </button>
       <div className="header-main">
         <img src={icon} alt="Globe"></img>
-        <h1 className="header-h1">My Travel Journal.</h1>
+        <h1 className="header-h1">My Travel Journal .</h1>
       </div>
     </header>
   );

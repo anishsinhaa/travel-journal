@@ -1,15 +1,19 @@
 import loc from "../images/location-pin.png";
 import { useNavigate } from "react-router-dom";
+
+
 export default function Main(props) {
-  const Navigate = useNavigate()
-  const onCardClick=(id)=>{
-    Navigate(`location/${id}`)
-  }
+  const Navigate = useNavigate();
+  const onCardClick = (id) => {
+    Navigate(`location/${id}`);
+  };
   //console.log(props.photos)
+  
+
   return (
-    <main className="main-container">
-      <div className="card" onClick={()=>onCardClick(props.id)}>
-        <img className="photo" src={props.photo} alt="Location"></img>
+    <main className="main-card">
+      <div className="card" onClick={() => onCardClick(props.id)}>
+        <img className="photo" src={props.cover} alt="Location"></img>
         <section className="info">
           <div className="state">
             <img src={loc} width="30px" height="30px" alt="LOCATION"></img>

@@ -1,18 +1,34 @@
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import data from "./data";
-import React from "react";
+//import data from "./data";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { MorePhotos} from "./components/MorePhotos";
-
-const PlaceList = () => {
-  return data.map((data) => {
-    return <Main key={data.id} {...data} />;
-  });
-};
+import { MorePhotos } from "./components/MorePhotos";
+import { db } from "./firebase-config";
+import { collection, getDocs } from "firebase/firestore";
 
 function App() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const placesRef = collection(db, "PlacesData"); // Reference the "PlacesData" collection
+        const querySnapshot = await getDocs(placesRef);
+        const documentsData = querySnapshot.docs.map((doc) => doc.data());
+        setData(documentsData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData()
+  }, []);
+  const PlaceList = () => {
+    console.log(data);
+    return data.map((data) => {
+      return <Main key={data.id} {...data} />;
+    });
+  };
   const [darkMode, setDarkMode] = React.useState(false);
   const toggle = () => {
     setDarkMode((prevState) => !prevState);
@@ -26,15 +42,14 @@ function App() {
       }}
     >
       <Header darkMode={darkMode} toggle={toggle} />
+      <div className="main-cont">
       <Router>
         <Routes>
           <Route path="/" element={<PlaceList />} />
           <Route path="/location/:id" element={<MorePhotos />} />
         </Routes>
-
-        {/* <section className="place-list"></section> */}
       </Router>
-
+      </div>
       <Footer />
     </div>
   );
