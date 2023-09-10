@@ -28,7 +28,7 @@ const Admin = () => {
     return () => unsubscribe();
   }, []);
 
-  // Function to sign in with Google
+  // Function to sign in and sign out
   const handleSignIn = (e) => {
     e.preventDefault();
     const email = document.getElementsByClassName("email")[0].value;

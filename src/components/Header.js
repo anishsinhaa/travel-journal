@@ -2,6 +2,7 @@ import icon from "../images/worldwide.png";
 import React from "react";
 import { Icon } from "@iconify/react";
 
+
 export default function Header(props) {
   const [buttonText, setButtonText] = React.useState("DarkMode");
   React.useEffect(() => {
@@ -15,7 +16,8 @@ export default function Header(props) {
   }, [props.darkMode]);
 
   const adminClick = ()=>{
-    window.open("/admin")
+    console.log("admin click")
+    window.location.href ="/admin"
   }
 
   return (
