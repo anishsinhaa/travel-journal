@@ -26,7 +26,7 @@ const Admin = () => {
 
     // Cleanup the subscription to avoid memory leaks
     return () => unsubscribe();
-  }, []);
+  }, [user]);
 
   // Function to sign in and sign out
   const handleSignIn = (e) => {
@@ -101,7 +101,7 @@ const Admin = () => {
         <div className="admin-dash">
           <h1>WELCOME BACK ZEUS!</h1>
           <div className="form">
-            <button type="button" onClick={handleSignOut}> SIGN OUT</button>
+            <button type="button" onClick={handleSignOut}>SIGN OUT</button>
           </div>
         </div>
       )}
