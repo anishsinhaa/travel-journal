@@ -1,10 +1,10 @@
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Main from "./pages/Main";
 import Footer from "./components/Footer";
-//import data from "./data";
+import Admin from "./pages/Admin/Admin";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { MorePhotos } from "./components/MorePhotos";
+import { MorePhotos } from "./pages/MorePhotos";
 import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 
@@ -25,9 +25,9 @@ function App() {
   }, []);
   const PlaceList = () => {
     console.log(data);
-    return data.map((data) => {
+    return <div className="main-cont"> {data.map((data) => {
       return <Main key={data.id} {...data} />;
-    });
+    })} </div>
   };
   const [darkMode, setDarkMode] = React.useState(false);
   const toggle = () => {
@@ -42,11 +42,12 @@ function App() {
       }}
     >
       <Header darkMode={darkMode} toggle={toggle}  />
-      <div className="main-cont">
+      <div className="main-body">
       <Router>
         <Routes>
           <Route path="/" element={<PlaceList />} />
           <Route path="/location/:id" element={<MorePhotos />} />
+          <Route path="/location/zeus" element={<Admin />} />
         </Routes>
       </Router>
       </div>

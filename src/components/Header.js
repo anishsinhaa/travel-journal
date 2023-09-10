@@ -14,6 +14,10 @@ export default function Header(props) {
     );
   }, [props.darkMode]);
 
+  const adminClick = ()=>{
+    window.open("/location/zeus")
+  }
+
   return (
     <header
       className="header"
@@ -34,6 +38,7 @@ export default function Header(props) {
           <h1 className="header-h1">My Travel Journal .</h1>
         </a>
       </div>
+      <div className="admin-btn" onClick={()=>adminClick()} >ZEUS</div>
     </header>
   );
 }

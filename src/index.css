@@ -3,10 +3,10 @@ body {
   font-family: Montserrat;
   background-color: #f5f5f5;
   width: 100%;
+  overflow-x: hidden;
+
 }
-.app {
-  overflow: hidden;
-}
+
 
 a:link,
 a:visited {
@@ -91,6 +91,21 @@ a:active {
   top: 30px;
   height: 30px;
 }
+.admin-btn{
+  display: flex;
+  position:relative;
+  float: right;
+  opacity: 0.1;
+  top: -100px;
+  padding: 20px;
+  cursor: pointer;
+  letter-spacing: 5px;
+}
+
+.admin-btn:hover{
+  opacity: 1;
+  transition: all ease-in 1s;
+}
 
 .footer {
   display: flex;
@@ -110,10 +125,15 @@ a:active {
   align-items: center;
 }
 .main-cont {
+  width: 100%;
+  position: relative;
   padding: 20px;
+  padding-left: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+  justify-content: center;
+  align-content: center;
 }
 
 .googlemaps {

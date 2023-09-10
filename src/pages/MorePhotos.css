@@ -25,6 +25,9 @@
     margin-bottom: 20px;
   }
   .morephotos-container{
+    padding-left: 20px;
+    position: relative;
+    top: -60px;
     width: 1450px;
   }
   .photos {
