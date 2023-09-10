@@ -15,7 +15,7 @@ export default function Header(props) {
   }, [props.darkMode]);
 
   const adminClick = ()=>{
-    window.open("/location/zeus")
+    window.open("/admin")
   }
 
   return (

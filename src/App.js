@@ -47,7 +47,7 @@ function App() {
         <Routes>
           <Route path="/" element={<PlaceList />} />
           <Route path="/location/:id" element={<MorePhotos />} />
-          <Route path="/location/zeus" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </Router>
       </div>
