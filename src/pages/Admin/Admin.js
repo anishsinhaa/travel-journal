@@ -41,7 +41,7 @@ const Admin = () => {
         .then((result) => {
         const newUser = result.user;
         setUser(newUser);
-        console.log(newUser);
+        console.log("newUser");
       })
       .catch((error) => {
         setLoginError(true);
