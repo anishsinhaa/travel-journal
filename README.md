@@ -156,7 +156,7 @@ Blueprint: `travel-journal-api/render.yaml`
 - **Build:** `npm run build`
 - **Publish:** `build`
 - **Env:** `REACT_APP_API_URL` = live API URL + `/api`  
-  Example: `https://travel-journal-api.onrender.com/api`
+  Example: `https://travel-journal-api-5lbc.onrender.com/api`
 
 `netlify.toml` already has SPA redirects (`/*` → `index.html`).
 

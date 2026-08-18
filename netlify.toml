@@ -4,7 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "22"
-  REACT_APP_API_URL = "https://travel-journal-api.onrender.com/api"
+  REACT_APP_API_URL = "https://travel-journal-api-5lbc.onrender.com/api"
 
 [[redirects]]
   from = "/*"
