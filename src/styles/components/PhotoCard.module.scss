@@ -1,0 +1,57 @@
+.caption {
+  width: 100%;
+  margin: 4px 0 8px;
+  line-height: 1.5;
+  font-size: 15px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  min-height: calc(1.5em * 3);
+}
+
+.noCaption {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.by {
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+
+.date {
+  margin: 4px 0;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+}
+
+.trip {
+  margin: 0 0 8px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.comment {
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-muted-surface);
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+
+  :global(.comment-author-link) {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+
+  span {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}

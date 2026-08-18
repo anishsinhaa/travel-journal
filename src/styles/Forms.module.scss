@@ -1,0 +1,38 @@
+.root {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 600;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+  }
+}
+
+.hint {
+  margin: -8px 0 16px;
+  opacity: 0.75;
+  font-size: 14px;
+}
+
+.checkboxLabel {
+  flex-direction: row !important;
+  align-items: center;
+  font-weight: normal !important;
+}

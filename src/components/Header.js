@@ -1,46 +1,56 @@
 import icon from "../images/worldwide.png";
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import ProfileMenu from "./ProfileMenu";
+import NotificationsBell from "./NotificationsBell";
+import BackButton from "./BackButton";
 
+const HOME_PATHS = ["/", "/my-travels"];
 
-export default function Header(props) {
+export default function Header({ darkMode, toggle }) {
+  const location = useLocation();
+  const isHome = HOME_PATHS.includes(location.pathname);
   const [buttonText, setButtonText] = React.useState("DarkMode");
+
   React.useEffect(() => {
     setButtonText(
-      props.darkMode ? (
+      darkMode ? (
         <Icon className="toggle-icon" icon="iconamoon:mode-light" />
       ) : (
         <Icon className="toggle-icon" icon="material-symbols:dark-mode" />
       )
     );
-  }, [props.darkMode]);
-
-  const adminClick = ()=>{
-    console.log("admin click")
-    window.location.href ="/admin"
-  }
+  }, [darkMode]);
 
   return (
-    <header
-      className="header"
-      style={{
-        backgroundColor: props.darkMode ? "#002147" : "#f55a5a",
-        color: props.darkMode ? "white" : "#28282B",
-      }}
-    >
-      <button
-        className={`toggler-${props.darkMode ? "dark" : "light"}`}
-        onClick={props.toggle}
-      >
-        {buttonText}
-      </button>
-      <div className="header-main">
-        <a href="/" className="header-title-link">
-          <img className="globe" src={icon} alt="Globe"></img>
-          <h1 className="header-h1">My Travel Journal .</h1>
-        </a>
+    <header className="header">
+      <div className="header-inner">
+        <div className="header-left">
+          {isHome ? (
+            <button
+              type="button"
+              className={`header-circle-btn toggler-${darkMode ? "dark" : "light"}`}
+              onClick={toggle}
+              aria-label="Toggle dark mode"
+            >
+              {buttonText}
+            </button>
+          ) : (
+            <BackButton darkMode={darkMode} />
+          )}
+        </div>
+        <div className="header-main">
+          <Link to="/" className="header-title-link">
+            <img className="globe" src={icon} alt="Globe" />
+            <h1 className="header-h1">My Travel Journal .</h1>
+          </Link>
+        </div>
+        <div className="header-actions">
+          <NotificationsBell />
+          <ProfileMenu />
+        </div>
       </div>
-      <div className="admin-btn" onClick={()=>adminClick()} >ZEUS</div>
     </header>
   );
 }

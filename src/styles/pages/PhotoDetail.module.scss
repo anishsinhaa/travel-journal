@@ -1,0 +1,142 @@
+.root {
+  --photo-fit-max-h: calc(100dvh - 145px);
+  max-width: 1200px;
+  margin-top: 16px;
+
+  @media (max-width: 768px) {
+    --photo-fit-max-h: calc(100dvh - 130px);
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: 32px;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.media {
+  position: sticky;
+  top: 16px;
+  min-width: 0;
+  max-height: var(--photo-fit-max-h);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    position: static;
+  }
+}
+
+.image {
+  width: 100%;
+  max-height: var(--photo-fit-max-h);
+  line-height: 0;
+  margin: 0;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 10px grey;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  :global(.smart-image) {
+    display: block;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: var(--photo-fit-max-h) !important;
+    object-fit: contain !important;
+    border-radius: var(--radius-sm);
+  }
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.2;
+  flex: 1;
+}
+
+.caption {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.noCaption {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.date {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+}
+
+.author {
+  margin: 0;
+  font-size: 15px;
+}
+
+.tripLink {
+  display: inline-block;
+  color: inherit !important;
+  text-decoration: underline !important;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.stats {
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.comments {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+
+  h3 {
+    margin: 0 0 12px;
+  }
+}
+
+.noComments {
+  margin: 0;
+  opacity: 0.7;
+  font-size: 14px;
+}
