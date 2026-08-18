@@ -1,4 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  REACT_APP_API_URL = "https://travel-journal-api.onrender.com/api"
+
 [[redirects]]
-from = "/*"
-to="/index.html"
-status= 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
