@@ -1,23 +1,40 @@
 # My Travel Journal
 
-A social travel journal: share trips and photos, explore other travelers, and interact with likes, comments, and follows.
+**Live:** https://mytraveljournal-as.netlify.app
 
-**Live site:** https://mytraveljournal-as.netlify.app
+React frontend · Express API · Firebase (Auth, Firestore, Storage)
 
-This folder is the **React frontend**. The API lives in the sibling folder `../travel-journal-api`. You need **both** running locally.
+> The API runs on Render’s free tier, so the **first load can take ~30 seconds** while the service wakes up.
+
+This folder is the **React frontend**. The API is in the sibling repo [`travel-journal-api`](https://github.com/anishsinhaa/travel-journal-api). You need both running locally.
+
+## Screenshots
+
+### Explore feed
+
+![Explore feed](screenshots/explore-feed.jpg)
+
+### Trip page
+
+![Trip page](screenshots/trip.jpg)
+
+| My Travels | Photo post | Notifications |
+|:----------:|:----------:|:-------------:|
+| ![My Travels](screenshots/my-travels.jpg) | ![Photo post](screenshots/post.jpg) | ![Notifications](screenshots/notifications.jpg) |
+| **Login** | **Night mode view** | |
+| ![Login](screenshots/login.png) | ![Night mode view](screenshots/explore-night-mode.jpg) | |
 
 ## Features
 
 - Google sign-in, plus email/password for demo accounts
 - **Explore** — photo and trip feeds with a single search bar (`?q=` for location, author, date, caption)
 - **My Travels** — your profile: trips + standalone photos only (trip-linked photos stay inside trips)
-- Trip detail: photo strip, carousel, map, likes, comments
-- Photo detail: full photo fitted to the viewport, lightbox carousel, likes, comments
+- Trip detail: photo strip, carousel, map, likes, and comments
+- Photo detail: full photo fitted to the viewport, lightbox carousel, likes, and comments
 - **Comments** — authors can edit/delete their own comments; post owners can delete comments on their posts (not edit others)
 - Follow users, in-app notifications (follow, likes, comments)
 - Edit trips/photos, edit profile (display name + bio)
 - Block users and report content
-- Dark mode (persisted in `localStorage`)
 - Lazy-loaded images with placeholders (`SmartImage`)
 
 ## Tech stack
@@ -35,11 +52,11 @@ You need **Node.js** (18+ recommended) and two terminals. Run the API first, the
 ### 1. API — `travel-journal-api`
 
 ```bash
-cd C:\Work\Anish\travel-journal-api
-copy .env.example .env
+cd ../travel-journal-api
+cp .env.example .env   # or: copy .env.example .env on Windows
 ```
 
-Put a Firebase Admin service account JSON at `travel-journal-api/serviceAccountKey.json` (or set `FIREBASE_SERVICE_ACCOUNT` in `.env` to the JSON string).
+Put a Firebase Admin service account JSON at `serviceAccountKey.json` in that folder (or set `FIREBASE_SERVICE_ACCOUNT` in `.env` to the JSON string).
 
 `.env` should look like:
 
@@ -56,20 +73,18 @@ npm install
 npm run dev
 ```
 
-You should see: `Travel Journal API running on port 5000`
-
-Health check: http://localhost:5000/api/health
+API: http://localhost:5000 · Health: http://localhost:5000/api/health
 
 ### 2. Frontend — `travel-journal`
 
 In a **second** terminal:
 
 ```bash
-cd C:\Work\Anish\travel-journal
-copy .env.example .env
+cd ../travel-journal
+cp .env.example .env   # or: copy .env.example .env on Windows
 ```
 
-`.env` should be:
+`.env`:
 
 ```
 REACT_APP_API_URL=http://localhost:5000/api
@@ -84,7 +99,7 @@ npm start
 
 App: http://localhost:3000
 
-Sign in with Google, or email/password for seeded demo accounts. After changing API routes, restart the API (`Ctrl+C`, then `npm run dev` again). After frontend CSS/JS changes, a hard refresh (`Ctrl+Shift+R`) is enough.
+Sign in with Google, or email/password for seeded demo accounts. After changing API routes, restart the API. After frontend CSS/JS changes, a hard refresh is enough.
 
 ### 3. Dummy data (optional)
 
@@ -94,16 +109,12 @@ Full notes: [`../travel-journal-api/SEED.md`](../travel-journal-api/SEED.md)
 
 **Firebase Console (required once):** Authentication → Sign-in method → enable **Email/Password**.
 
-```powershell
-cd C:\Work\Anish\travel-journal-api
+```bash
+cd ../travel-journal-api
 npm run seed
 ```
 
-Reset seeded content:
-
-```powershell
-npm run seed:clear
-```
+Reset seeded content: `npm run seed:clear`
 
 Then open http://localhost:3000/signin and use **Sign in with email**.
 
@@ -116,11 +127,6 @@ Then open http://localhost:3000/signin and use **Sign in with email**.
 | Amira Hassan | `amira.seed@traveljournal.dev` | `TravelSeed123!` |
 
 Creates 5 travelers, 9 trips, trip photos, 3 standalone photos, comments, likes, and follows. Images are free Unsplash URLs (not uploaded to Storage). Your Google account and its posts are left alone.
-
-### Windows PowerShell notes
-
-- Use `;` instead of `&&` if chaining commands: `cd travel-journal; npm start`
-- `copy .env.example .env` works in PowerShell (or `Copy-Item .env.example .env`)
 
 ## Project structure
 
@@ -159,7 +165,3 @@ Blueprint: `travel-journal-api/render.yaml`
   Example: `https://travel-journal-api-5lbc.onrender.com/api`
 
 `netlify.toml` already has SPA redirects (`/*` → `index.html`).
-
-## Screenshots
-
-Add screenshots to `docs/screenshots/` for portfolio use (Explore, trip detail, photo detail, notifications).
